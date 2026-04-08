@@ -1,0 +1,470 @@
+:root {
+    /* EVSU Ormoc-inspired theme colors */
+    --evsu-maroon: #7a1216;
+    --evsu-maroon-dark: #5d0d10;
+    --evsu-gold: #f0b429;
+    --evsu-gold-dark: #d99a10;
+    --evsu-light: #fffaf0;
+    --evsu-text: #2b1a1a;
+    --white-soft: rgba(255, 255, 255, 0.86);
+    --glass-border: rgba(255, 255, 255, 0.55);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(240, 180, 41, 0.18), transparent 25%),
+        radial-gradient(circle at 85% 15%, rgba(122, 18, 22, 0.18), transparent 26%),
+        linear-gradient(180deg, #fffaf0 0%, #fff 55%, #f8f1df 100%);
+    color: var(--evsu-text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.01) 10px,
+        rgba(255, 255, 255, 0.01) 20px
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Global links */
+a {
+    color: var(--evsu-maroon);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--evsu-maroon-dark);
+}
+
+/* Navbar */
+.navbar.bg-primary {
+    background: linear-gradient(90deg, var(--evsu-maroon-dark), var(--evsu-maroon)) !important;
+    box-shadow: 0 10px 28px rgba(31, 8, 8, 0.28);
+    border-bottom: 2px solid rgba(240, 180, 41, 0.45);
+}
+
+.navbar-brand {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    font-size: 1.2rem;
+}
+
+.navbar .btn-light {
+    border-radius: 999px;
+    border: 0;
+    font-weight: 600;
+}
+
+.navbar .btn-outline-light {
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.app-shell {
+    background: var(--white-soft);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    box-shadow: 0 14px 36px rgba(122, 18, 22, 0.12);
+}
+
+/* Bootstrap primary overrides for consistent theme */
+.btn-primary,
+.bg-primary {
+    background-color: var(--evsu-maroon) !important;
+    border-color: var(--evsu-maroon) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--evsu-maroon-dark) !important;
+    border-color: var(--evsu-maroon-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(93, 13, 16, 0.25);
+}
+
+.text-primary {
+    color: var(--evsu-maroon) !important;
+}
+
+.btn {
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+/* Cards and containers */
+.card {
+    border-radius: 16px;
+    border: 1px solid #f1dfb9;
+    box-shadow: 0 10px 26px rgba(122, 18, 22, 0.1);
+    overflow: hidden;
+    animation: fadeUp 0.35s ease both;
+}
+
+.card-header {
+    background: linear-gradient(90deg, #fff4d7, #ffedc1);
+    color: var(--evsu-maroon-dark);
+    font-weight: 600;
+    border-bottom: 1px solid #f1dfb9;
+}
+
+.card-body {
+    background: rgba(255, 255, 255, 0.88);
+}
+
+/* Tables */
+.table {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background: linear-gradient(90deg, #fff2d4, #fee8b6);
+    color: var(--evsu-maroon-dark);
+    border-bottom: 2px solid #e6c579;
+    font-weight: 700;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #fffbf1;
+}
+
+.table tbody tr:hover {
+    background-color: #fff3dd;
+}
+
+/* Dashboard links */
+.list-group-item {
+    border: 1px solid #f1dfb9;
+    transition: all 0.22s ease;
+    border-radius: 12px !important;
+    margin-bottom: 8px;
+    background: #fff;
+    font-weight: 500;
+}
+
+.list-group-item:hover {
+    background-color: #fff4db;
+    color: var(--evsu-maroon-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(122, 18, 22, 0.12);
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    border-radius: 12px;
+    border: 1px solid #e5d3ad;
+    padding: 0.6rem 0.8rem;
+    background-color: #fffdf8;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--evsu-gold-dark);
+    box-shadow: 0 0 0 0.2rem rgba(240, 180, 41, 0.2);
+    background-color: #fff;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #5f171a;
+}
+
+/* Alerts */
+.alert-success {
+    background-color: #eef9ea;
+    border-color: #cde9c5;
+    border-radius: 12px;
+}
+
+.alert-danger {
+    background-color: #fff0f0;
+    border-color: #f3c4c4;
+    border-radius: 12px;
+}
+
+.alert-info {
+    background-color: #eef6ff;
+    border-color: #cddff9;
+    border-radius: 12px;
+}
+
+/* Hero section from index */
+.bg-light.rounded-3 {
+    border: 1px solid #f1dfb9 !important;
+    background: linear-gradient(135deg, #fff4d7, #fff9ee) !important;
+    box-shadow: 0 12px 28px rgba(122, 18, 22, 0.1);
+}
+
+/* Small animation utility */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+    .app-shell {
+        border-radius: 14px;
+        padding: 0.75rem;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+}
+
+/* Portal tiles (dashboard-style UI) */
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.portal-tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(240, 180, 41, 0.35);
+    text-decoration: none;
+    color: #fff;
+    min-height: 118px;
+    overflow: hidden;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.portal-tile::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(circle at 20% 20%, rgba(240, 180, 41, 0.35), transparent 45%);
+    pointer-events: none;
+}
+
+.portal-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 44px rgba(122, 18, 22, 0.18);
+}
+
+.tile-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    z-index: 1;
+}
+
+.tile-icon i {
+    font-size: 1.2rem;
+}
+
+.tile-text {
+    z-index: 1;
+    flex: 1;
+}
+
+.tile-title {
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px;
+}
+
+.tile-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+.tile-arrow {
+    z-index: 1;
+    opacity: 0.95;
+}
+
+.tile-arrow i {
+    font-size: 1.2rem;
+}
+
+/* Color variants */
+.tile-maroon {
+    background: linear-gradient(135deg, var(--evsu-maroon-dark), var(--evsu-maroon));
+}
+.tile-gold {
+    background: linear-gradient(135deg, #c78600, var(--evsu-gold-dark));
+}
+.tile-maroon-2 {
+    background: linear-gradient(135deg, #9d1b20, var(--evsu-maroon));
+}
+.tile-gold-2 {
+    background: linear-gradient(135deg, #d99a10, var(--evsu-gold));
+}
+
+@media (max-width: 992px) {
+    .portal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .portal-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Google-Forms-like survey editor UI (no right-side question type panel) */
+.gf-survey-editor {
+    border-radius: 18px;
+    border: 1px solid rgba(240, 180, 41, 0.28);
+    box-shadow: 0 18px 40px rgba(122, 18, 22, 0.12);
+    overflow: hidden;
+}
+
+.gf-editor-top {
+    padding: 18px 16px 8px 16px;
+    border-bottom: 1px solid rgba(241, 223, 185, 0.7);
+    background: linear-gradient(180deg, rgba(240, 180, 41, 0.08), rgba(255, 255, 255, 0));
+}
+
+.gf-editor-top-label {
+    font-weight: 700;
+    color: rgba(93, 13, 16, 0.95);
+    margin-bottom: 8px;
+}
+
+.gf-form-title-input {
+    font-size: 1.35rem;
+    font-weight: 800;
+    border: none !important;
+    background: transparent !important;
+    padding: 6px 0 !important;
+    border-bottom: 2px solid rgba(240, 180, 41, 0.55) !important;
+    border-radius: 0 !important;
+}
+
+.gf-form-title-input:focus {
+    box-shadow: none !important;
+    border-bottom-color: var(--evsu-gold) !important;
+}
+
+.gf-questions {
+    padding: 16px;
+}
+
+.gf-question-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(241, 223, 185, 0.9);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 14px 30px rgba(122, 18, 22, 0.08);
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.gf-question-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 7px;
+    background: linear-gradient(180deg, var(--evsu-gold-dark), var(--evsu-maroon));
+}
+
+.gf-question-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-left: 10px;
+}
+
+.gf-question-number {
+    font-weight: 900;
+    letter-spacing: 0.2px;
+}
+
+.gf-mini-btn {
+    border-radius: 12px;
+}
+
+.gf-question-input {
+    margin-top: 8px;
+    border-radius: 14px;
+    border: 1px solid rgba(229, 211, 173, 0.9) !important;
+}
+
+.gf-options {
+    padding-left: 10px;
+}
+
+.gf-option-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(229, 211, 173, 0.75);
+    border-radius: 14px;
+    padding: 10px 12px;
+}
+
+.gf-option-row-extra {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.gf-radio-preview {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(122, 18, 22, 0.7);
+    background: rgba(255, 255, 255, 0.9);
+    flex: 0 0 auto;
+}
+
+.gf-option-input {
+    border-radius: 12px !important;
+}
+
+.gf-remove-option-btn {
+    border-radius: 12px;
+}
+
+.gf-add-option-btn {
+    margin-left: 10px;
+    border-radius: 14px;
+    border-color: rgba(240, 180, 41, 0.6) !important;
+    color: var(--evsu-maroon) !important;
+}
+
+.gf-add-question-btn {
+    border-radius: 16px !important;
+    padding: 12px 16px !important;
+}
+
